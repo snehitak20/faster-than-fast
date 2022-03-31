@@ -34,14 +34,16 @@ function generatePassword() {
 //To confirm types of characters used in the password   
   var yesLower = confirm("Click OK to confirm lowercase letters in your password?");
   var yesUpper = confirm("Click OK to confirm uppercase letters in your password?");
-  var yesNumbers = confirm("Click OK to confirm in your password?");
+  var yesNumbers = confirm("Click OK to confirm numbers in your password?");
   var yesSpecials = confirm ("Click OK to confirm special characters in your password?");
 // When NO character types are chosen 
   if (yesLower === false && yesUpper === false && yesNumbers === false && yesSpecials === false) {
     alert("You must choose at least one password criteria.");
     return generatePassword()
   }
-//Store input from criteria choices
+// Store input from criteria choices.
+// Another way to describe what is happening here: a new empty array is created called "password."
+// With the "if" statements, I am saying that if I clicked ok to confirm a criteria, then the concat feature will take the array that I confirmed for, and add it to this new array.
 var password = [];
   if (yesLower) {
     password = password.concat(lower);
@@ -51,7 +53,7 @@ var password = [];
     password = password.concat(upper);
   }
 
-  if (yesNumbers) {
+  if(yesNumbers) {
     password = password.concat(numbers);
   }
 

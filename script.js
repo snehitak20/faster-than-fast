@@ -1,83 +1,87 @@
-// Types of Characters: 
+// Variables for all character types 
 var lower = "abcdefghijklmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
-var specials = "!#$%&'()*=+-_./:;<=>?@[\^{|}~";
-var chosen= ""; 
-var length;
-var yesLower;
-var yesUpper;
-var yesNumbers;
-var yesSpecials;
+var specials = "!\"#$%&'()*+,-./:;<=>?@[\]^{|}~";
+var chosen = "";
 
 
-// Assignment Code
+// Assignment Code [GIVEN]
+// Add event listener to generate button [GIVEN]
+// Write password to the #password input [GIVEN]
 var generateBtn = document.querySelector("#generate");
+var passwordText = document.querySelector("#password");
+var password = generatePassword();
+passwordText.value = password;
 
 
-// Issue prompt to determine the length of password 
-function chooseLength () {
-  var length = prompt("Choose how many characters long you would like your password to be (between 8-128 characters).");
-// For when character amounts <8 or >128
-  if (length < 8) {
-    alert("Password length must be a number between 8-128 characters.");
-    chooseLength();
-  }else if (length > 128) {
-    alert("Password length must be a number between 8-128 characters.");
-    chooseLength();
-// For when a number is NOT selected--> use NaN (Not a number)
-  }else if (isNaN(length)) {
-    alert("Password length must be a number between 8-128 characters.");
-    chooseLength();
-  }
-  return chooseLength
-}
-// Write password to the #password input
+// Write password to the #password input [GIVEN]
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+  password.value === "";
+  var newPw = "";
+// Password criteria:
+  // Issue prompt to determine the length of password 
+  //To confirm types of characters used in the password   
+  var pwLength = prompt("Choose how long you would like your password to be (between 8-128 characters).");
+  var yesLower = confirm("Do you want lowercase letters in your password?");
+  var yesUpper = confirm("Do you want uppercase letters in your password?");
+  var yesNumbers = confirm("Do you want numbers in your password?");
+  var yesSpecials = confirm ("Do you want special characters in your password?");
+// For when character amounts <8 or >128
+// For when a input criterion is NOT selected--> use NaN 
+  if (pwLength < 8 || pwLength > 128) {
+    alert("Your password is not between 8-128 characters. Please try again.")
+    var pwLength = prompt("Choose how long you would like your password to be (between 8-128 characters).");
+  }
+// When NO character types are chosen 
+  else if (yesLower === false && yesUpper === false && yesNumbers === false && yesSpecials === false) {
+    alert("You must choose at least one password criteria.");
+    var yesLower = confirm("Do you want lowercase letters in your password?");
+    var yesUpper = confirm("Do you want uppercase letters in your password?");
+    var yesNumbers = confirm("Do you want numbers in your password?");
+    var yesSpecials = confirm ("Do you want special characters in your password?");
+  }
+// Generate the final password.
+  if (yesLower) {
+    chosen += lower;
+  }
+  if (yesUpper) {
+    chosen += upper;
+  }
+  if (yesNumbers) {
+    chosen += numbers;
+  }
+  if (yesSpecials) {
+    chosen += specials;
+  }
+  for (var i = 0; i < pwLength; i++) {
+    newPw += chosen.charAt(Math.floor(Math.random() * chosen.length));
+  }
+  password.value = randomString;
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+  
+
+//To confirm types of characters used in the password
+
+
 
 // Generates the final password
-function generatePassword () {
 
 
-// Confirm character types 
-var yesLower = confirm("Include lowercase letters?");
-var yesUpper = confirm("Include uppercase letters?");
-var yesNumbers = confirm("Include numbers");
-var yesSpecials = confirm("Include special characters?")
 
-// When NO character types are chosen 
-if (!yesLower&&!yesUpper&&!yesNumbers&&!yesSpecials) {
-  alert("You must choose at lease one character type.")
-  return generatePassword()
-}
-// When character type is chosen
-if (yesLower) {
-  chosen += lower
-}
 
-if (yesUpper) {
-  chosen += upper
-}
 
-if (yesNumbers) {
-  chosen += numbers
-}
 
-if (yesSpecials) {
-  chosen += specials
-}
+
+
+
+
 // Use for loop and Math to help generate the RANDOMNESS
-for (var i= 0; i < length; i++) {
-  final = chosen.charAt(Math.floor(Math.random() * chosen.length));
-}
-return final;
-}
+

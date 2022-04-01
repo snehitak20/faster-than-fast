@@ -8,6 +8,7 @@ var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N
 var numbers = ["0", "1","2", "3", "4", "5", "6", "7", "8", "9"];
 var specials = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ";", "<", "=", ">", "?", "@", "^", "~"];
 var chosen = "";
+
 // Write password to the #password input [GIVEN]
 function writePassword() {
   var password = generatePassword();
@@ -44,6 +45,7 @@ function generatePassword() {
 // Store input from criteria choices.
 // Another way to describe what is happening here: a new empty array is created called "password."
 // With the "if" statements, I am saying that if I clicked ok to confirm a criteria, then the concat feature will take the array that I confirmed for, and add it to this new array.
+// console.log: here, it will 
 var password = [];
   if (yesLower) {
     password = password.concat(lower);

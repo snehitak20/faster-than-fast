@@ -45,7 +45,7 @@ function generatePassword() {
 // Store input from criteria choices.
 // Another way to describe what is happening here: a new empty array is created called "password."
 // With the "if" statements, I am saying that if I clicked ok to confirm a criteria, then the concat feature will take the array that I confirmed for, and add it to this new array.
-// console.log: here, it will 
+// console.log: here, it will tell the console to log the new array that has been created.
 var password = [];
   if (yesLower) {
     password = password.concat(lower);

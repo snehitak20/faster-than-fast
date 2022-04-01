@@ -20,6 +20,10 @@ For this project, the main objective was to maintain the appearance of the webpa
 - CSS3
 - JavaScript 
 
+## Usage
+
+To navigate this webpage, click generate password. A series of prompts will be issued in an alert window where the user can confirm the length of their password, and the types of characters they want to use. Note down the password once it has been generated and appears within the textbox. To generate a new password, refresh the webpage.
+
 ## Installation
 
 1. Create a new repository on Github. 
@@ -65,9 +69,14 @@ For this project, the main objective was to maintain the appearance of the webpa
     - *Give 5-10 minutes for the webpage to display the full contents.
 15. You have successfully completed this project!
 
-## Usage
+## Credits 
 
-To navigate this webpage, click generate password. A series of prompts will be issued in an alert window where the user can confirm the length of their password, and the types of characters they want to use. Note down the password once it has been generated and appears within the textbox. To generate a new password, refresh the webpage.
+Initial code was given by the UC Berkeley Extension, Coding Bootcamp. 
+## Reflection
 
-##
+For this project, it was important to learn the use of `prompt(), alert(), and confirm()`. It was also important to learn about the use of the `[Math.floor(Math.random())` in order to generate a random password that meets both the length and criteria that the user has selected. This project stands out because it has a functional random password generator. 
+
+## License
+
+Licensed under the [MIT](https://choosealicense.com/licenses/mit/#) license. 
 

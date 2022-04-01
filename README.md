@@ -1,4 +1,11 @@
 # faster-than-fast
 
 ## Description
-The objective 
+
+The goal of this project is to have a webpage that will generate a random password based on a specific set of criteria. The password must select a minimum of one criteria out of four for the password to generate. The options offered for password criteria are: lowercase letters, uppercase letters, numbers, and special characters. The length of the password and the criteria for the password are presented in a series of prompts, and once all prompts have been answered, a random password will be generated, and display directly on the page. 
+
+For this project, the main objective was to maintain the appearance of the webpage when altering the code. As such, base files which includes HTML, CSS, and JavaScript were given. In the HTML file, aside from organizing the document so that it can be read easier, no edits were done. Likewise, the CSS file was not altered. The main work occurred within the JavaScript file. Within the JavaScript file, initial code was pre-written and is denoted as given. Arrays were created to include the different criteria for the password, and a `var chosen = ""` was created to reflect the final new password. In the `function generatePassword()`, the initial prompt to the user is written as:
+`var pwLength = prompt("Choose how long you would like your password to be (between 8-128 characters).")`. Following this prompt is a series of `if ()` statements that tests for different conditions when the user inputs a number for the length of characters in the password. Both `if (pwLength < 8 || pwLength > 128)` and `if (isNaN(pwLength))` are followed by alerts that prompt users to enter a number that is between 8-128 characters. A series of `confirm ()` statements are included in the JavaScript file as they are needed for the user to confirm what type of characters they want. `if ()` and `concat` are used to fill a new array based on which criteria have been selected by the user. Lastly, to generate a password that is both random and is the length that the user has picked, the following is used: 
+`for (var i = 0; i < pwLength; i++) {chosen = chosen + password[Math.floor(Math.random() * password.length)];console.log(chosen);}return chosen;}`. Throughout the JavaScript files, comments were also written throughout to follow what is happening to the function step-by-step. 
+
+

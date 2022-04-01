@@ -8,9 +8,9 @@ For this project, the main objective was to maintain the appearance of the webpa
 `var pwLength = prompt("Choose how long you would like your password to be (between 8-128 characters).")`. Following this prompt is a series of `if ()` statements that tests for different conditions when the user inputs a number for the length of characters in the password. Both `if (pwLength < 8 || pwLength > 128)` and `if (isNaN(pwLength))` are followed by alerts that prompt users to enter a number that is between 8-128 characters. A series of `confirm ()` statements are included in the JavaScript file as they are needed for the user to confirm what type of characters they want. `if ()` and `concat` are used to fill a new array based on which criteria have been selected by the user. Lastly, to generate a password that is both random and is the length that the user has picked, the following is used: 
 `for (var i = 0; i < pwLength; i++) {chosen = chosen + password[Math.floor(Math.random() * password.length)];console.log(chosen);}return chosen;}`. Throughout the JavaScript files, comments were also written throughout to follow what is happening to the function step-by-step. 
 
-<img src="./assets/js2.png" alt="JavaScript code snippet1 with comments">
-<img src="./assets/js1.png" alt="JavaScript code snippet2 with comments">
-<img src="./assets/03-javascript-homework-demo.png" alt="Random password generator webpage">
+<img src= "./Assets/js2.png" alt="JavaScript code snippet1 with comments">
+<img src= "./Assets/js1.png" alt="JavaScript code snippet2 with comments">
+<img src= "./Assets/03-javascript-homework-demo.png" alt="Random password generator webpage">
 
 [Link to webpage](https://snehitak20.github.io/faster-than-fast/)
 
